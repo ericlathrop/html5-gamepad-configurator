@@ -33,10 +33,10 @@ var buttonNames = [
 
 var gp = new GamepadLib();
 
-function update() {
+function update(props) {
   gp.update();
   return buttonNames.reduce((newState, name) => {
-    newState[name] = gp.button(0, name);
+    newState[name] = gp.button(props.number || 0, name);
     return newState;
   }, {});
 }
