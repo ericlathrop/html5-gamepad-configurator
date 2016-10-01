@@ -47,7 +47,12 @@ export default requestAnimationFrame(update, pure(function Gamepad(props) {
     if (props[name]) {
       className += " active";
     }
-    return (<button className={className} key={name} />);
+    return (
+      <button
+        className={className}
+        key={name}
+        name={name}
+        onClick={e => props.onClick(e.target.name)} />);
   });
 
   return (
