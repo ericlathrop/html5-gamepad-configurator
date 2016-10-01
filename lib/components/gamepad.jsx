@@ -1,4 +1,5 @@
 import GamepadLib from "html5-gamepad";
+import pure from "./pure";
 import React from "react";
 import requestAnimationFrame from "./request-animation-frame";
 
@@ -34,13 +35,16 @@ var gp = new GamepadLib();
 
 function update() {
   gp.update();
-  return { gamepad: gp };
+  return buttonNames.reduce((newState, name) => {
+    newState[name] = gp.button(0, name);
+    return newState;
+  }, {});
 }
 
-export default requestAnimationFrame(update, function Gamepad({ gamepad }) {
+export default requestAnimationFrame(update, pure(function Gamepad(props) {
   var buttons = buttonNames.map(name => {
     var className = name.replace(/ /g, "-");
-    if (gamepad.button(0, name)) {
+    if (props[name]) {
       className += " active";
     }
     return (<button className={className} key={name} />);
@@ -51,4 +55,4 @@ export default requestAnimationFrame(update, function Gamepad({ gamepad }) {
       {buttons}
     </div>
   );
-});
+}));

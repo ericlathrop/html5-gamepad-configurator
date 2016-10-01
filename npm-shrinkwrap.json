@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "html5-gamepad-configurator",
   "version": "0.0.0",
   "dependencies": {
     "abbrev": {
@@ -1604,6 +1604,11 @@
       "from": "html-comment-regex@>=1.1.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/html-comment-regex/-/html-comment-regex-1.1.1.tgz"
     },
+    "html5-gamepad": {
+      "version": "0.1.4",
+      "from": "html5-gamepad@latest",
+      "resolved": "http://registry.npmjs.org/html5-gamepad/-/html5-gamepad-0.1.4.tgz"
+    },
     "http-browserify": {
       "version": "1.7.0",
       "from": "http-browserify@>=1.3.2 <2.0.0",
@@ -2870,6 +2875,11 @@
       "version": "15.3.2",
       "from": "react@>=15.3.2 <16.0.0",
       "resolved": "https://registry.npmjs.org/react/-/react-15.3.2.tgz"
+    },
+    "react-addons-pure-render-mixin": {
+      "version": "15.3.2",
+      "from": "react-addons-pure-render-mixin@latest",
+      "resolved": "https://registry.npmjs.org/react-addons-pure-render-mixin/-/react-addons-pure-render-mixin-15.3.2.tgz"
     },
     "react-dom": {
       "version": "15.3.2",
