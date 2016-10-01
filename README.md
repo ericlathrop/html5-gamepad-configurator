@@ -1,20 +1,5 @@
-# react-redux-boilerplate
-Boilerplate SPA with React, Redux, Immutable, Babel, Eslint, & Mocha
-
-This boilerplate app has all the pieces set up for what I think is a top-shelf front-end JavaScript Single Page Application.
-
-* [react](http://facebook.github.io/react/) for rendering
-* [redux](http://redux.js.org/) for state management
-* [react-router](https://github.com/rackt/react-router) for client-side routing
-* [immutable](http://facebook.github.io/immutable-js/) for an efficient data store
-* [babel](http://babeljs.io/) for the latest & greatest JavaScript
-* [webpack](https://webpack.github.io/) for bundling modules for the browser
-* [mocha](http://mochajs.org/) & [chai](http://chaijs.com/) for testing
-* [eslint](http://eslint.org/) for catching common bugs and style issues
-* [node-sass](https://github.com/sass/node-sass) for better CSS
-* [autoprefixer-loader](https://github.com/passy/autoprefixer-loader) to never have to write vendor prefixed CSS rules again
-
-[A Comprehensive Guide to Test-First Development with Redux, React, and Immutable](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html) helped me put a lot of this together.
+# html5-gamepad-configurator
+A visual tool for testing the [html5-gamepad](https://github.com/ericlathrop/html5-gamepad) library and configuring gamepad mappings.
 
 ## Commands
 
