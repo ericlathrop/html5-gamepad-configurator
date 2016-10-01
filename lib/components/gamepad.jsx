@@ -42,18 +42,7 @@ function update(props) {
 }
 
 export default requestAnimationFrame(update, pure(function Gamepad(props) {
-  var buttons = buttonNames.map(name => {
-    var className = name.replace(/ /g, "-");
-    if (props[name]) {
-      className += " active";
-    }
-    return (
-      <button
-        className={className}
-        key={name}
-        name={name}
-        onClick={e => props.onClick(e.target.name)} />);
-  });
+  var buttons = buttonNames.map(name => <GamepadButton key={name} name={name} onClick={props.onClick} pressed={props[name]} />);
 
   return (
     <div className="gamepad">
@@ -61,3 +50,15 @@ export default requestAnimationFrame(update, pure(function Gamepad(props) {
     </div>
   );
 }));
+
+var GamepadButton = pure(function GamepadButton({ name, onClick, pressed }) {
+  var className = name.replace(/ /g, "-");
+  if (pressed) {
+    className += " active";
+  }
+  return (
+    <button
+      className={className}
+      name={name}
+      onClick={e => onClick(e.target.name)} />);
+});
