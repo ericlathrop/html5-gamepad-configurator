@@ -1,7 +1,15 @@
 import { connect } from "react-redux";
+import Gamepad from "../components/gamepad";
 import React from "react";
 
-let HomePage = () => <h1>Home Page</h1>;
+function HomePage() {
+  return (
+    <div>
+      <h1>HTML5 Gamepad Configurator</h1>
+      <Gamepad />
+    </div>
+  );
+}
 
 function select(state) {
   return state;

@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "html5-gamepad-configurator",
   "version": "0.0.0",
-  "description": "Boilerplate SPA with React, Redux, Immutable, Babel, Eslint, & Mocha",
+  "description": "",
   "main": "lib/index.js",
   "scripts": {
     "build": "webpack",
