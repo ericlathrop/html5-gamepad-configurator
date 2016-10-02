@@ -305,3 +305,20 @@ h1 {
     background: #BEF202 !important;
   }
 }
+
+.gamepad-raw-data {
+  ol {
+    display: flex;
+    flex-direction: row;
+  }
+  li {
+    display: flex;
+    flex: 1;
+    border: 1px solid #ffaaaa;
+    padding: 5px;
+    margin: 10px;
+  }
+  li.active {
+    background-color: #ffaaaa;
+  }
+}

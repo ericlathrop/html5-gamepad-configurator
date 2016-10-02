@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <div>
       <h1>HTML5 Gamepad Configurator</h1>
-      <Gamepad onClick={button => console.log(button)} />
+      <Gamepad number={0} onClick={button => console.log(button)} />
     </div>
   );
 }
