@@ -6,9 +6,12 @@ import React from "react";
 export default class GamepadMapper extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      centeredAxes: this.props.gamepad.gamepad.axes.slice(0)
+    };
     this.onClick = this.onClick.bind(this);
     this.onMappingComplete = this.onMappingComplete.bind(this);
+    this.onMarkCenters = this.onMarkCenters.bind(this);
   }
 
   onClick(button) {
@@ -25,15 +28,20 @@ export default class GamepadMapper extends React.Component {
     this.setState({ buttonMapping: undefined }); // eslint-disable-line react/no-set-state
   }
 
+  onMarkCenters() {
+    this.setState({ centeredAxes: this.props.gamepad.gamepad.axes.slice(0) }); // eslint-disable-line react/no-set-state
+  }
+
   render() {
     var { gamepad } = this.props;
     var mapping;
     if (this.state.buttonMapping) {
-      mapping = <ButtonMapping gamepad={gamepad} name={this.state.buttonMapping} onMappingComplete={this.onMappingComplete} />;
+      mapping = <ButtonMapping centeredAxes={this.state.centeredAxes} gamepad={gamepad} name={this.state.buttonMapping} onMappingComplete={this.onMappingComplete} />;
     }
     return (
       <div>
         <div>{gamepad.gamepad.id}</div>
+        <button onClick={this.onMarkCenters}>Mark Centers</button>
         <GamepadRawData gamepad={gamepad} />
         <GamepadDiagram gamepad={gamepad} onClick={this.onClick} />
         {mapping}
