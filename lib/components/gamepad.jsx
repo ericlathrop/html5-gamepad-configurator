@@ -12,6 +12,11 @@ function update(props) {
 }
 
 export default requestAnimationFrame(update, function Gamepad() {
+  if (gamepads.length === 0) {
+    return (
+      <div>Connect and press a button on a gamepad to begin.</div>
+    );
+  }
   var mappers = gamepads.map((gamepad, i) => <GamepadMapper gamepad={gamepad} key={i} />);
   return (
     <div>
