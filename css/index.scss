@@ -131,7 +131,7 @@ h1 {
     left: 55.12%;
   }
 
-  .guide {
+  .home {
     background: radial-gradient(ellipse at center, #dbdcdf 0%, #bbbdc2 100%);
     border: 1px solid #aaadb4;
     position: absolute;
@@ -162,10 +162,10 @@ h1 {
     border: 1px solid #1c1d20;
   }
 
-  .right,
-  .left,
-  .up,
-  .down {
+  .dpad-right,
+  .dpad-left,
+  .dpad-up,
+  .dpad-down {
     position: absolute;
     width: 5.3%;
     height: 6.63%;
@@ -204,28 +204,28 @@ h1 {
     border-radius: 100% 0 0 0 !important;
   }
 
-  .up {
+  .dpad-up {
     left: 30.21%;
     top: 43.69%;
     background: linear-gradient(to top, #272827 0%, #0e0e0e 80%);
     border-radius: 5px 5px 0 0 !important;
   }
 
-  .right {
+  .dpad-right {
     left: 35.5%;
     top: 50.35%;
     background: linear-gradient(to right, #272827 0%, #0e0e0e 80%);
     border-radius: 0 5px 5px 0 !important;
   }
 
-  .down {
+  .dpad-down {
     left: 30.21%;
     top: 56.96%;
     background: linear-gradient(to bottom, #272827 0%, #0e0e0e 80%);
     border-radius: 0 0 5px 5px !important;
   }
 
-  .left {
+  .dpad-left {
     left: 24.9%;
     top: 50.35%;
     background: linear-gradient(to left, #272827 0%, #0e0e0e 80%);
