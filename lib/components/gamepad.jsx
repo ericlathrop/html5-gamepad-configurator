@@ -1,6 +1,5 @@
 import gamepads from "html5-gamepad";
-import GamepadDiagram from "./gamepad-diagram";
-import GamepadRawData from "./gamepad-raw-data";
+import GamepadMapper from "./gamepad-mapper";
 import React from "react";
 import requestAnimationFrame from "./request-animation-frame";
 
@@ -12,18 +11,11 @@ function update(props) {
   return { timestamp: gamepad.gamepad.timestamp };
 }
 
-export default requestAnimationFrame(update, function Gamepad(props) {
-  var { number } = props;
-  var gp = gamepads[number];
-  if (!gp) {
-    return null;
-  }
-
+export default requestAnimationFrame(update, function Gamepad() {
+  var mappers = gamepads.map((gamepad, i) => <GamepadMapper gamepad={gamepad} key={i} />);
   return (
     <div>
-      <div>{gp.gamepad.id}</div>
-      <GamepadRawData gamepad={gp} />
-      <GamepadDiagram gamepad={gp} onClick={props.onClick} />
+      {mappers}
     </div>
   );
 });
