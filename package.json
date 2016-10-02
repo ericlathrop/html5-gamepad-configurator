@@ -31,7 +31,6 @@
     "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-react": "^6.3.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "html5-gamepad": "^0.1.4",
     "json-loader": "^0.5.4",
     "mocha": "^3.1.0",
     "node-sass": "^3.10.1",
@@ -42,6 +41,7 @@
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
+    "html5-gamepad": "git+https://github.com/ericlathrop/html5-gamepad.git#dynamic-mapping",
     "immutable": "^3.8.1",
     "react": "^15.3.2",
     "react-addons-pure-render-mixin": "^15.3.2",
