@@ -15,7 +15,7 @@ export default class GamepadMapper extends React.Component {
   }
 
   render() {
-    var { gamepad, onClick } = this.props;
+    var { gamepad } = this.props;
     return (
       <div>
         <div>{gamepad.gamepad.id}</div>
