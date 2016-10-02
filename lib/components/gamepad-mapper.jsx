@@ -11,7 +11,6 @@ export default class GamepadMapper extends React.Component {
     };
     this.onClick = this.onClick.bind(this);
     this.onMappingComplete = this.onMappingComplete.bind(this);
-    this.onMarkCenters = this.onMarkCenters.bind(this);
   }
 
   onClick(button) {
@@ -28,10 +27,6 @@ export default class GamepadMapper extends React.Component {
     this.setState({ buttonMapping: undefined }); // eslint-disable-line react/no-set-state
   }
 
-  onMarkCenters() {
-    this.setState({ centeredAxes: this.props.gamepad.gamepad.axes.slice(0) }); // eslint-disable-line react/no-set-state
-  }
-
   render() {
     var { gamepad } = this.props;
     var mapping;
@@ -41,7 +36,6 @@ export default class GamepadMapper extends React.Component {
     return (
       <div>
         <div>{gamepad.gamepad.id}</div>
-        <button onClick={this.onMarkCenters}>Mark Centers</button>
         <GamepadRawData gamepad={gamepad} />
         <GamepadDiagram gamepad={gamepad} onClick={this.onClick} />
         {mapping}
