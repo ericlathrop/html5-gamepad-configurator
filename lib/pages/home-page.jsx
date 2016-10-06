@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
-import Gamepad from "../components/gamepad";
+import GamepadList from "../components/gamepad-list";
 import React from "react";
 
 function HomePage() {
   return (
     <div>
       <h1>HTML5 Gamepad Configurator</h1>
-      <Gamepad number={0} onClick={button => console.log(button)} />
+      <GamepadList />
     </div>
   );
 }

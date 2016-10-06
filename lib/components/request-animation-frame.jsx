@@ -4,7 +4,7 @@ export default function requestAnimationFrame(fn, Component) {
   return class RAF extends React.Component {
     constructor(props) {
       super(props);
-      this.state = fn(props, window.performance.now());
+      this.state = fn(props, {}, window.performance.now());
       this.update = this.update.bind(this);
     }
 
@@ -17,7 +17,7 @@ export default function requestAnimationFrame(fn, Component) {
     }
 
     update(elapsed) {
-      var newState = fn(this.props, elapsed);
+      var newState = fn(this.props, this.state, elapsed);
       this.setState(newState); // eslint-disable-line react/no-set-state
       this.requestId = window.requestAnimationFrame(this.update);
     }

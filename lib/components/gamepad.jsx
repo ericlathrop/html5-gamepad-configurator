@@ -1,26 +1,34 @@
-import gamepads from "html5-gamepad";
-import GamepadMapper from "./gamepad-mapper";
+import ButtonMapping from "./button-mapping";
+import GamepadDiagram from "./gamepad-diagram";
+import GamepadMapper from "../gamepad-mapper";
+import GamepadRawData from "./gamepad-raw-data";
+import { List } from "immutable";
+import pure from "./pure";
 import React from "react";
 import requestAnimationFrame from "./request-animation-frame";
 
-function update(props) {
-  var gamepad = gamepads[props.number || 0];
-  if (!gamepad) {
-    return {};
+function update({ gamepad }, { axes, buttons, mapper }) {
+  var updatedAxes = (axes || List()).merge(gamepad.gamepad.axes);
+  var updatedButtons = (buttons || List()).merge(gamepad.gamepad.buttons);
+  if (!mapper) {
+    mapper = new GamepadMapper(gamepad);
+  } else {
+    mapper.update();
   }
-  return { timestamp: gamepad.gamepad.timestamp };
+  return { axes: updatedAxes, buttons: updatedButtons, mapper, mappingButton: mapper.mappingButton };
 }
 
-export default requestAnimationFrame(update, function Gamepad() {
-  if (gamepads.length === 0) {
-    return (
-      <div>Connect and press a button on a gamepad to begin.</div>
-    );
+export default requestAnimationFrame(update, pure(function Gamepad({ gamepad, mapper, mappingButton }) {
+  var mapping;
+  if (mappingButton) {
+    mapping = <ButtonMapping name={mappingButton} />;
   }
-  var mappers = gamepads.map((gamepad, i) => <GamepadMapper gamepad={gamepad} key={i} />);
   return (
     <div>
-      {mappers}
+      <div>{gamepad.gamepad.id}</div>
+      <GamepadRawData gamepad={gamepad} />
+      <GamepadDiagram gamepad={gamepad} onClick={(button) => mapper.beginMappingButton(button)} />
+      {mapping}
     </div>
   );
-});
+}));
