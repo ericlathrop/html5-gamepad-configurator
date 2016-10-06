@@ -1,3 +1,4 @@
+import AxisMapping from "./axis-mapping";
 import ButtonMapping from "./button-mapping";
 import GamepadDiagram from "./gamepad-diagram";
 import GamepadMapper from "../gamepad-mapper";
@@ -18,22 +19,33 @@ function update({ gamepad }, { axes, buttons, mapper }) {
   } else {
     mapper.update();
   }
-  return { axes: updatedAxes, buttons: updatedButtons, mapper, mappingButton: mapper.mappingButton };
+  return {
+    axes: updatedAxes,
+    buttons: updatedButtons,
+    mapper,
+    mappingTarget: mapper.mappingTarget,
+    mappingType: mapper.mappingType
+  };
 }
 
-export default requestAnimationFrame(update, pure(function Gamepad({ gamepad, mapper, mappingButton }) {
+export default requestAnimationFrame(update, pure(function Gamepad({ gamepad, mapper, mappingTarget, mappingType }) {
   if (!gamepad) {
     return null;
   }
   var mapping;
-  if (mappingButton) {
-    mapping = <ButtonMapping name={mappingButton} />;
+  if (mappingType === "axis" && mappingTarget) {
+    mapping = <AxisMapping name={mappingTarget} />;
+  } else if (mappingType === "button" && mappingTarget) {
+    mapping = <ButtonMapping name={mappingTarget} />;
   }
   return (
     <div>
       <div>{gamepad.gamepad.id}</div>
       <GamepadRawData gamepad={gamepad} />
-      <GamepadDiagram gamepad={gamepad} onClick={(button) => mapper.beginMappingButton(button)} />
+      <GamepadDiagram
+        gamepad={gamepad}
+        onClickAxis={mapper.beginMappingAxis}
+        onClickButton={mapper.beginMappingButton} />
       {mapping}
     </div>
   );
