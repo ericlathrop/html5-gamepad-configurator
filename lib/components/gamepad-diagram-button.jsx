@@ -10,5 +10,6 @@ export default pure(function GamepadDiagramButton({ name, onClick, pressed }) {
     <button
       className={className}
       name={name}
-      onClick={e => onClick(e.target.name)} />);
+      onClick={e => onClick(e.target.name)}
+      title={name} />);
 });
