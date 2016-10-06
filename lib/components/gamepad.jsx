@@ -8,6 +8,9 @@ import React from "react";
 import requestAnimationFrame from "./request-animation-frame";
 
 function update({ gamepad }, { axes, buttons, mapper }) {
+  if (!gamepad) {
+    return {};
+  }
   var updatedAxes = (axes || List()).merge(gamepad.gamepad.axes);
   var updatedButtons = (buttons || List()).merge(gamepad.gamepad.buttons);
   if (!mapper) {
@@ -19,6 +22,9 @@ function update({ gamepad }, { axes, buttons, mapper }) {
 }
 
 export default requestAnimationFrame(update, pure(function Gamepad({ gamepad, mapper, mappingButton }) {
+  if (!gamepad) {
+    return null;
+  }
   var mapping;
   if (mappingButton) {
     mapping = <ButtonMapping name={mappingButton} />;
