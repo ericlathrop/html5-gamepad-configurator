@@ -331,6 +331,7 @@ h1 {
   position: relative;
 }
 .gamepad-diagram-stick-pos {
+  border-radius: 50%;
   width: 10px;
   height: 10px;
   background-color: green;
@@ -338,6 +339,7 @@ h1 {
   margin-top: -5px;
   margin-left: -5px;
 }
+
 .gamepad-diagram-axis {
   border: 1px solid blue;
   width: 100px;
