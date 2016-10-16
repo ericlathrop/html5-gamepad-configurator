@@ -320,7 +320,7 @@ h1 {
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  background-color: green;
+  background-color: #bef202;
   position: absolute;
   margin-top: -5px;
   margin-left: -5px;
@@ -343,8 +343,25 @@ h1 {
   border: 1px solid blue;
   width: 100px;
   height: 20px;
+  position: absolute;
 }
 .gamepad-diagram-axis-value {
   height: 100%;
-  background-color: green;
+  background-color: #bef202;
+  position: absolute;
+  top: 0;
+}
+.gamepad-diagram-axis.left-trigger {
+  top: 0%;
+  left: 0%;
+  .gamepad-diagram-axis-value {
+    right: 0;
+  }
+}
+.gamepad-diagram-axis.right-trigger {
+  top: 0%;
+  left: 80%;
+  .gamepad-diagram-axis-value {
+    left: 0;
+  }
 }
