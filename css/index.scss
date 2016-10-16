@@ -285,22 +285,6 @@ h1 {
     top: 50.2%;
   }
 
-  .pushme {
-    animation: pushme 1.2s ease-out;
-    animation-iteration-count: infinite;
-  }
-
-  @keyframes pushme {
-    0% {
-      background: rgba(80, 134, 198, 0.3);
-    }
-    50% {
-      background: rgba(80, 134, 198, 0.8);
-    }
-    100% {
-      background: rgba(80, 134, 198, 0.3);
-    }
-  }
   .active {
     background: #BEF202 !important;
   }
