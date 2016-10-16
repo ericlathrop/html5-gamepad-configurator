@@ -2,9 +2,10 @@ import pure from "./pure";
 import React from "react";
 
 export default pure(function GamepadDiagramAxis({ name, onClick, xValue, yValue }) {
+  var className = name.replace(/ /g, "-");
   return (
     <button
-      className={"gamepad-diagram-stick"}
+      className={className + " gamepad-diagram-stick"}
       name={name}
       onClick={e => onClick(e.target.name)}
       title={name}>

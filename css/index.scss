@@ -18,10 +18,10 @@ h1 {
     border: 3px solid #5086c6;
   }
 
-  .a,
-  .b,
-  .x,
-  .y {
+  .gamepad-diagram-button.a,
+  .gamepad-diagram-button.b,
+  .gamepad-diagram-button.x,
+  .gamepad-diagram-button.y {
     position: absolute;
     height: 7.4%;
     width: 6%;
@@ -29,67 +29,69 @@ h1 {
     cursor: pointer;
     color: white;
   }
-  .a:after,
-  .b:after,
-  .x:after,
-  .y:after {
+  .gamepad-diagram-button.a:after,
+  .gamepad-diagram-button.b:after,
+  .gamepad-diagram-button.x:after,
+  .gamepad-diagram-button.y:after {
     background: red;
   }
 
-  .y {
+  .gamepad-diagram-button.y {
     background: radial-gradient(ellipse at center, #fee1a9 0%, #fec75d 100%);
     border: 2px solid #feb934;
     top: 19.75%;
     left: 72.68%;
   }
 
-  .b {
+  .gamepad-diagram-button.b {
     background: radial-gradient(ellipse at center, #b8da73 0%, #9aca36 100%);
     border: 2px solid #7ba22b;
     top: 29%;
     left: 80.2%;
   }
 
-  .x {
+  .gamepad-diagram-button.x {
     background: radial-gradient(ellipse at center, #8aaed9 0%, #5086c6 100%);
     border: 2px solid #386dab;
     top: 29%;
     left: 65.25%;
   }
 
-  .a {
+  .gamepad-diagram-button.a {
     background: radial-gradient(ellipse at center, #d7756c 0%, #c14135 100%);
     border: 2px solid #99342a;
     top: 38.5%;
     left: 72.68%;
   }
 
-  .left-trigger,
-  .left-shoulder,
-  .right-trigger,
-  .right-shoulder {
+  .gamepad-diagram-button.left-trigger,
+  .gamepad-diagram-button.left-shoulder,
+  .gamepad-diagram-button.right-trigger,
+  .gamepad-diagram-button.right-shoulder {
     position: absolute;
     border: 1px solid #4c4e56;
     color: #4c4e56;
 
   }
 
-  .left-trigger, .right-trigger {
+  .gamepad-diagram-button.left-trigger,
+  .gamepad-diagram-button.right-trigger {
     background: linear-gradient(to bottom, #989aa3 14%, #8a8d97 27%, #7d808b 56%, #7d808b 60%, #646771 71%, #34363b 100%) !important;
   }
 
-  .left-shoulder, .right-shoulder {
+  .gamepad-diagram-button.left-shoulder,
+  .gamepad-diagram-button.right-shoulder {
     background: linear-gradient(to bottom, #646771 14%, #8a8d97 27%, #7d808b 46%, #7d808b 100%) !important;
   }
 
-  .left-trigger {
+  .gamepad-diagram-button.left-trigger {
     width: 6.18%;
     height: 8.86%;
     left: 18%;
     border-radius: 25px 25px 0 0 !important;
   }
 
-  .left-shoulder {
+  .gamepad-diagram-button.left-shoulder {
     width: 18.2%;
     height: 8.86%;
     left: 11.5%;
@@ -97,14 +99,14 @@ h1 {
     border-radius: 120px 35px 25px 15px !important;
   }
 
-  .right-trigger {
+  .gamepad-diagram-button.right-trigger {
     width: 6.18%;
     height: 8.86%;
     left: 71.82%;
     border-radius: 25px 25px 0 0 !important;
   }
 
-  .right-shoulder {
+  .gamepad-diagram-button.right-shoulder {
     width: 18.2%;
     height: 8.86%;
     top: 8.86%;
@@ -112,8 +114,8 @@ h1 {
     border-radius: 35px 120px 15px 25px !important;
   }
 
-  .back,
-  .start {
+  .gamepad-diagram-button.back,
+  .gamepad-diagram-button.start {
     position: absolute;
     width: 5.3%;
     height: 4.64%;
@@ -123,15 +125,15 @@ h1 {
     top: 30.92%;
   }
 
-  .back {
+  .gamepad-diagram-button.back {
     left: 34.63%;
   }
 
-  .start {
+  .gamepad-diagram-button.start {
     left: 55.12%;
   }
 
-  .home {
+  .gamepad-diagram-button.home {
     background: radial-gradient(ellipse at center, #dbdcdf 0%, #bbbdc2 100%);
     border: 1px solid #aaadb4;
     position: absolute;
@@ -142,37 +144,37 @@ h1 {
     top: 26.72%;
   }
 
-  .left-stick-up,
-  .left-stick-down,
-  .right-stick-up,
-  .right-stick-down {
+  .gamepad-diagram-button.left-stick-up,
+  .gamepad-diagram-button.left-stick-down,
+  .gamepad-diagram-button.right-stick-up,
+  .gamepad-diagram-button.right-stick-down {
     position: absolute;
     width: 6.18%;
     height: 7.73%;
     border: 1px solid #1c1d20;
   }
 
-  .left-stick-right,
-  .left-stick-left,
-  .right-stick-right,
-  .right-stick-left {
+  .gamepad-diagram-button.left-stick-right,
+  .gamepad-diagram-button.left-stick-left,
+  .gamepad-diagram-button.right-stick-right,
+  .gamepad-diagram-button.right-stick-left {
     position: absolute;
     width: 6.18%;
     height: 7.73%;
     border: 1px solid #1c1d20;
   }
 
-  .dpad-right,
-  .dpad-left,
-  .dpad-up,
-  .dpad-down {
+  .gamepad-diagram-button.dpad-right,
+  .gamepad-diagram-button.dpad-left,
+  .gamepad-diagram-button.dpad-up,
+  .gamepad-diagram-button.dpad-down {
     position: absolute;
     width: 5.3%;
     height: 6.63%;
     border: 0;
   }
 
-  .right-stick-up {
+  .gamepad-diagram-button.right-stick-up {
     left: 58.1%;
     top: 44.65%;
     transform: rotate(-45deg);
@@ -180,7 +182,7 @@ h1 {
     border-radius: 0 100% 0 0 !important;
   }
 
-  .right-stick-right {
+  .gamepad-diagram-button.right-stick-right {
     left: 62.75%;
     top: 50.4%;
     background: linear-gradient(to bottom right, #34363b 0%, #040405 80%);
@@ -188,7 +190,7 @@ h1 {
     border-radius: 0 0 100% 0 !important;
   }
 
-  .right-stick-down {
+  .gamepad-diagram-button.right-stick-down {
     left: 58.1%;
     top: 56.2%;
     background: linear-gradient(to bottom left, #34363b 0%, #040405 80%);
@@ -196,7 +198,7 @@ h1 {
     border-radius: 0 0 0 100% !important;
   }
 
-  .right-stick-left {
+  .gamepad-diagram-button.right-stick-left {
     left: 53.4%;
     top: 50.4%;
     background: linear-gradient(to top left, #34363b 0%, #040405 80%);
@@ -204,35 +206,35 @@ h1 {
     border-radius: 100% 0 0 0 !important;
   }
 
-  .dpad-up {
+  .gamepad-diagram-button.dpad-up {
     left: 30.21%;
     top: 43.69%;
     background: linear-gradient(to top, #272827 0%, #0e0e0e 80%);
     border-radius: 5px 5px 0 0 !important;
   }
 
-  .dpad-right {
+  .gamepad-diagram-button.dpad-right {
     left: 35.5%;
     top: 50.35%;
     background: linear-gradient(to right, #272827 0%, #0e0e0e 80%);
     border-radius: 0 5px 5px 0 !important;
   }
 
-  .dpad-down {
+  .gamepad-diagram-button.dpad-down {
     left: 30.21%;
     top: 56.96%;
     background: linear-gradient(to bottom, #272827 0%, #0e0e0e 80%);
     border-radius: 0 0 5px 5px !important;
   }
 
-  .dpad-left {
+  .gamepad-diagram-button.dpad-left {
     left: 24.9%;
     top: 50.35%;
     background: linear-gradient(to left, #272827 0%, #0e0e0e 80%);
     border-radius: 5px 0 0 5px !important;
   }
 
-  .left-stick-up {
+  .gamepad-diagram-button.left-stick-up {
     left: 15.85%;
     top: 22.85%;
     background: linear-gradient(to top right, #34363b 0%, #040405 80%);
@@ -240,7 +242,7 @@ h1 {
     border-radius: 0 100% 0 0 !important;
   }
 
-  .left-stick-right {
+  .gamepad-diagram-button.left-stick-right {
     left: 20.49%;
     top: 28.65%;
     background: linear-gradient(to bottom right, #34363b 0%, #040405 80%);
@@ -248,7 +250,7 @@ h1 {
     border-radius: 0 0 100% 0 !important;
   }
 
-  .left-stick-down {
+  .gamepad-diagram-button.left-stick-down {
     left: 15.85%;
     top: 34.5%;
     background: linear-gradient(to bottom left, #34363b 0%, #040405 80%);
@@ -256,7 +258,7 @@ h1 {
     border-radius: 0 0 0 100% !important;
   }
 
-  .left-stick-left {
+  .gamepad-diagram-button.left-stick-left {
     left: 11.13%;
     top: 28.65%;
     background: linear-gradient(to top left, #34363b 0%, #040405 80%);
@@ -264,8 +266,8 @@ h1 {
     border-radius: 100% 0 0 0 !important;
   }
 
-  .right-stick,
-  .left-stick {
+  .gamepad-diagram-button.right-stick,
+  .gamepad-diagram-button.left-stick {
     z-index: 2;
     position: absolute;
     height: 8%;
@@ -275,12 +277,12 @@ h1 {
     border: 1px solid #4c4e56;
   }
 
-  .left-stick {
+  .gamepad-diagram-button.left-stick {
     left: 15.8%;
     top: 28.5%;
   }
 
-  .right-stick {
+  .gamepad-diagram-button.right-stick {
     left: 58%;
     top: 50.2%;
   }
@@ -322,6 +324,19 @@ h1 {
   position: absolute;
   margin-top: -5px;
   margin-left: -5px;
+}
+
+.gamepad-diagram-stick.left-stick {
+  top: 23%;
+  left: -8%;
+}
+.gamepad-diagram-stick.right-stick {
+  top: 45%;
+  left: 60%;
+}
+.gamepad-diagram-stick.dpad {
+  top: 45%;
+  left: -28%;
 }
 
 .gamepad-diagram-axis {
