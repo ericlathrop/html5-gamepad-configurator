@@ -13,7 +13,9 @@ function update({ gamepad }, { axes, buttons, mapper }) {
     return {};
   }
   var updatedAxes = (axes || List()).merge(gamepad.gamepad.axes);
-  var updatedButtons = (buttons || List()).merge(gamepad.gamepad.buttons);
+  var buttonStates = gamepad.gamepad.buttons.map(button => button.pressed);
+  var updatedButtons = (buttons || List()).merge(buttonStates);
+
   if (!mapper) {
     mapper = new GamepadMapper(gamepad);
   } else {
