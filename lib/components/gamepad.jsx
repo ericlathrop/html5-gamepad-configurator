@@ -41,14 +41,16 @@ export default requestAnimationFrame(update, pure(function Gamepad({ gamepad, ma
     mapping = <ButtonMapping name={mappingTarget} />;
   }
   return (
-    <div>
+    <div className="gamepad-container">
       <div>{gamepad.gamepad.id}</div>
       <GamepadRawData gamepad={gamepad} />
-      <GamepadDiagram
-        gamepad={gamepad}
-        onClickAxis={mapper.beginMappingAxis}
-        onClickButton={mapper.beginMappingButton} />
-      {mapping}
+      <div className="gamepad-panels">
+        <GamepadDiagram
+          gamepad={gamepad}
+          onClickAxis={mapper.beginMappingAxis}
+          onClickButton={mapper.beginMappingButton} />
+        {mapping}
+      </div>
     </div>
   );
 }));

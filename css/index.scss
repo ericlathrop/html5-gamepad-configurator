@@ -365,3 +365,20 @@ h1 {
     left: 0;
   }
 }
+
+.gamepad-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.gamepad-panels {
+  display: flex;
+  flex-direction: row;
+}
+
+.axis-mapping, .button-mapping {
+  max-width: 200px;
+  margin-left: 10px;
+  border-left: 3px dashed #ccc;
+  padding: 10px;
+}
