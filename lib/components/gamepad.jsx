@@ -16,6 +16,7 @@ function update({ gamepad }, { axes, buttons, mapper }) {
   var buttonStates = gamepad.gamepad.buttons.map(button => button.pressed);
   var updatedButtons = (buttons || List()).merge(buttonStates);
 
+  navigator.getGamepads(); // fix for chrome
   if (!mapper) {
     mapper = new GamepadMapper(gamepad);
   } else {
