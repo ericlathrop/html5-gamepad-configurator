@@ -31,6 +31,61 @@ function update({ gamepad }, { axes, buttons, mapper }) {
   };
 }
 
+
+function exportMapping(gamepad) {
+  var mapping = gamepad.mapping;
+  mapping.supported.length = 0;
+  mapping.supported.push(generateSupported(gamepad, navigator.userAgent));
+  mapping.name = generateName(mapping.supported[0]);
+
+  var jsonMapping = JSON.stringify(mapping, null, 2);
+  var issue = generateIssue(mapping.name, jsonMapping);
+
+  window.open("https://github.com/ericlathrop/html5-gamepad/issues/new?title=" + encodeURIComponent(issue.title) + "&body=" + encodeURIComponent(issue.body));
+}
+
+function generateIssue(name, jsonMapping) {
+  return {
+    title: "Mapping for " + name,
+    body: "Please include this mapping:\n\n```\n" + jsonMapping + "\n```"
+  };
+}
+
+function generateName(supported) {
+  return supported.id + " " + supported.browser + " " + supported.os;
+}
+
+function generateSupported(gamepad, ua) {
+  return {
+    browser: getBrowser(ua),
+    id: gamepad.gamepad.id,
+    os: getOperatingSystem(ua)
+  };
+}
+
+function getBrowser(ua) {
+  if (ua.indexOf("Chrome")) {
+    return "Chrome";
+  }
+  if (ua.indexOf("Firefox")) {
+    return "Firefox";
+  }
+  return ua;
+}
+
+function getOperatingSystem(ua) {
+  if (ua.indexOf("Windows NT")) {
+    return "Windows NT";
+  }
+  if (ua.indexOf("Mac OS X")) {
+    return "Mac OS X";
+  }
+  if (ua.indexOf("Linux")) {
+    return "Linux";
+  }
+  return ua;
+}
+
 export default requestAnimationFrame(update, pure(function Gamepad({ gamepad, mapper, mappingTarget, mappingType }) {
   if (!gamepad) {
     return null;
@@ -52,6 +107,7 @@ export default requestAnimationFrame(update, pure(function Gamepad({ gamepad, ma
           onClickButton={mapper.beginMappingButton} />
         {mapping}
       </div>
+      <button onClick={exportMapping.bind(undefined, gamepad)}>Export to Github (must be logged in)</button>
     </div>
   );
 }));
