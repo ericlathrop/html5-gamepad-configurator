@@ -1,4 +1,5 @@
 var autoprefixer = require("autoprefixer");
+var CopyWebpackPlugin = require("copy-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var fs = require("fs");
 var webpack = require("webpack");
@@ -16,8 +17,8 @@ module.exports = {
   },
   devtool: "source-map",
   output: {
-    path: __dirname + "/build",
-    publicPath: "/assets/",
+    path: __dirname + "/docs",
+    publicPath: "/",
     filename: "[name].js"
   },
   module: {
@@ -46,6 +47,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new CopyWebpackPlugin([
+      { from: "public" }
+    ]),
     new ExtractTextPlugin("[name].css"),
     new webpack.DefinePlugin({
       "process.env": {
