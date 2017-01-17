@@ -43,7 +43,7 @@
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
-    "html5-gamepad": "git+https://github.com/ericlathrop/html5-gamepad.git#dynamic-mapping",
+    "html5-gamepad": "^1.0.0",
     "immutable": "^3.8.1",
     "react": "^15.3.2",
     "react-addons-pure-render-mixin": "^15.3.2",
