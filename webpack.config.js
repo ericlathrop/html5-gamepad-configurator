@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 var autoprefixer = require("autoprefixer");
-var CopyWebpackPlugin = require("copy-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var fs = require("fs");
+var path = require("path");
 var webpack = require("webpack");
 
 var babelOptions = JSON.parse(fs.readFileSync(".babelrc"));
@@ -18,7 +19,7 @@ module.exports = {
   devtool: "source-map",
   output: {
     path: __dirname + "/docs",
-    publicPath: "/",
+    publicPath: "",
     filename: "[name].js"
   },
   module: {
@@ -30,6 +31,12 @@ module.exports = {
       }
     ],
     loaders: [
+      {
+        include: [
+          path.resolve(__dirname, "public"),
+        ],
+        loader: "file-loader?name=[name].[ext]"
+      },
       {
         test: /\.json$/,
         loader: "json-loader"
@@ -47,9 +54,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: "public" }
-    ]),
     new ExtractTextPlugin("[name].css"),
     new webpack.DefinePlugin({
       "process.env": {
