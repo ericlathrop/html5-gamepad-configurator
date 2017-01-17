@@ -1,6 +1,8 @@
 # html5-gamepad-configurator
 A visual tool for testing the [html5-gamepad](https://github.com/ericlathrop/html5-gamepad) library and configuring gamepad mappings.
 
+# [Try it here](https://ericlathrop.github.io/html5-gamepad-configurator/)
+
 ## Commands
 
 * `npm install` to install all the dependencies.
