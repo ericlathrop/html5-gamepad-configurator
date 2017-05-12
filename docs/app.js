@@ -79,9 +79,9 @@
 	
 	var _homePage2 = _interopRequireDefault(_homePage);
 	
-	__webpack_require__(251);
+	__webpack_require__(253);
 	
-	__webpack_require__(256);
+	__webpack_require__(258);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -23337,7 +23337,7 @@
 	
 	var _html5Gamepad2 = _interopRequireDefault(_html5Gamepad);
 	
-	var _gamepad = __webpack_require__(233);
+	var _gamepad = __webpack_require__(235);
 	
 	var _gamepad2 = _interopRequireDefault(_gamepad);
 	
@@ -23476,8 +23476,17 @@
 	  if (!mapping) {
 	    return 0;
 	  }
-	  var index = mapping.index;
-	  return this.gamepad.axes[index];
+	  if (mapping.index !== undefined) {
+	    var index = mapping.index;
+	    return this.gamepad.axes[index];
+	  }
+	  if (mapping.buttonPositive !== undefined && this.gamepad.buttons[mapping.buttonPositive].pressed) {
+	    return 1;
+	  }
+	  if (mapping.buttonNegative !== undefined && this.gamepad.buttons[mapping.buttonNegative].pressed) {
+	    return -1;
+	  }
+	  return 0;
 	};
 	SingleGamepad.prototype.button = function(name) {
 	  var mapping = this.mapping.buttons[name];
@@ -23527,8 +23536,11 @@
 	
 	  __webpack_require__(229),
 	  __webpack_require__(230),
+	
 	  __webpack_require__(231),
-	  __webpack_require__(232)
+	  __webpack_require__(232),
+	  __webpack_require__(233),
+	  __webpack_require__(234)
 	];
 
 
@@ -25046,6 +25058,9 @@
 
 	module.exports = {
 		"axes": {
+			"dpad x": {
+				"index": 6
+			},
 			"dpad y": {
 				"index": 7
 			},
@@ -25086,6 +25101,268 @@
 			},
 			"dpad up": {
 				"index": 12
+			},
+			"home": {
+				"index": 16
+			},
+			"left shoulder": {
+				"index": 4
+			},
+			"left stick": {
+				"index": 10
+			},
+			"left stick down": {
+				"axis": 1,
+				"direction": 1
+			},
+			"left stick left": {
+				"axis": 0,
+				"direction": -1
+			},
+			"left stick right": {
+				"axis": 0,
+				"direction": 1
+			},
+			"left stick up": {
+				"axis": 1,
+				"direction": -1
+			},
+			"left trigger": {
+				"index": 6
+			},
+			"right shoulder": {
+				"index": 5
+			},
+			"right stick": {
+				"index": 11
+			},
+			"right stick down": {
+				"axis": 3,
+				"direction": 1
+			},
+			"right stick left": {
+				"axis": 2,
+				"direction": -1
+			},
+			"right stick right": {
+				"axis": 2,
+				"direction": 1
+			},
+			"right stick up": {
+				"axis": 3,
+				"direction": -1
+			},
+			"right trigger": {
+				"index": 7
+			},
+			"start": {
+				"index": 9
+			},
+			"x": {
+				"index": 2
+			},
+			"y": {
+				"index": 3
+			}
+		},
+		"name": "PLAYSTATION(R)3 Controller (STANDARD GAMEPAD Vendor: 054c Product: 0268) Chrome OSX Linux",
+		"supported": [
+			{
+				"browser": "Chrome",
+				"id": "PLAYSTATION(R)3 Controller (STANDARD GAMEPAD Vendor: 054c Product: 0268)",
+				"os": "Mac OS X"
+			},
+			{
+				"browser": "Chrome",
+				"id": "Sony PLAYSTATION(R)3 Controller (STANDARD GAMEPAD Vendor: 054c Product: 0268)",
+				"os": "Linux"
+			}
+		]
+	};
+
+/***/ },
+/* 230 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"axes": {
+			"dpad x": {
+				"index": 6
+			},
+			"dpad y": {
+				"index": 7
+			},
+			"left stick x": {
+				"index": 0
+			},
+			"left stick y": {
+				"index": 1
+			},
+			"left trigger": {
+				"index": 12
+			},
+			"right stick x": {
+				"index": 2
+			},
+			"right stick y": {
+				"index": 3
+			},
+			"right trigger": {
+				"index": 13
+			}
+		},
+		"buttons": {
+			"a": {
+				"index": 14
+			},
+			"b": {
+				"index": 13
+			},
+			"back": {
+				"index": 0
+			},
+			"dpad down": {
+				"index": 6
+			},
+			"dpad left": {
+				"index": 7
+			},
+			"dpad right": {
+				"index": 5
+			},
+			"dpad up": {
+				"index": 4
+			},
+			"home": {
+				"index": 16
+			},
+			"left stick": {
+				"index": 1
+			},
+			"left shoulder": {
+				"index": 10
+			},
+			"left stick down": {
+				"axis": 1,
+				"direction": 1
+			},
+			"left stick left": {
+				"axis": 0,
+				"direction": -1
+			},
+			"left stick right": {
+				"axis": 0,
+				"direction": 1
+			},
+			"left stick up": {
+				"axis": 1,
+				"direction": -1
+			},
+			"left trigger": {
+				"index": 8
+			},
+			"right stick": {
+				"index": 2
+			},
+			"right stick down": {
+				"axis": 3,
+				"direction": 1
+			},
+			"right stick left": {
+				"axis": 2,
+				"direction": -1
+			},
+			"right stick right": {
+				"axis": 2,
+				"direction": 1
+			},
+			"right stick up": {
+				"axis": 3,
+				"direction": -1
+			},
+			"right trigger": {
+				"index": 9
+			},
+			"right shoulder": {
+				"index": 11
+			},
+			"start": {
+				"index": 3
+			},
+			"x": {
+				"index": 15
+			},
+			"y": {
+				"index": 12
+			}
+		},
+		"name": "054c-0268-Sony PLAYSTATION(R)3 Controller Firefox Linux",
+		"supported": [
+			{
+				"browser": "Firefox",
+				"id": "054c-0268-Sony PLAYSTATION(R)3 Controller",
+				"os": "Linux"
+			}
+		]
+	};
+
+/***/ },
+/* 231 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"axes": {
+			"dpad x": {
+				"buttonPositive": 15,
+				"buttonNegative": 14
+			},
+			"dpad y": {
+				"buttonPositive": 13,
+				"buttonNegative": 12
+			},
+			"left stick x": {
+				"index": 0
+			},
+			"left stick y": {
+				"index": 1
+			},
+			"left trigger": {
+				"buttonPositive": 6
+			},
+			"right stick x": {
+				"index": 2
+			},
+			"right stick y": {
+				"index": 3
+			},
+			"right trigger": {
+				"buttonPositive": 7
+			}
+		},
+		"buttons": {
+			"a": {
+				"index": 0
+			},
+			"b": {
+				"index": 1
+			},
+			"back": {
+				"index": 8
+			},
+			"dpad down": {
+				"index": 13
+			},
+			"dpad left": {
+				"index": 14
+			},
+			"dpad right": {
+				"index": 15
+			},
+			"dpad up": {
+				"index": 12
+			},
+			"home": {
+				"index": 16
 			},
 			"left shoulder": {
 				"index": 4
@@ -25158,7 +25435,7 @@
 	};
 
 /***/ },
-/* 230 */
+/* 232 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -25208,7 +25485,7 @@
 				"index": 12
 			},
 			"home": {
-				"index": 17
+				"index": 16
 			},
 			"left shoulder": {
 				"index": 4
@@ -25286,7 +25563,7 @@
 	};
 
 /***/ },
-/* 231 */
+/* 233 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -25303,11 +25580,17 @@
 			"left stick y": {
 				"index": 1
 			},
+			"left trigger": {
+				"index": 3
+			},
 			"right stick x": {
 				"index": 2
 			},
 			"right stick y": {
 				"index": 5
+			},
+			"right trigger": {
+				"index": 4
 			}
 		},
 		"buttons": {
@@ -25335,6 +25618,9 @@
 			"dpad up": {
 				"axis": 7,
 				"direction": -1
+			},
+			"home": {
+				"index": 12
 			},
 			"left shoulder": {
 				"index": 4
@@ -25407,7 +25693,7 @@
 	};
 
 /***/ },
-/* 232 */
+/* 234 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -25454,7 +25740,7 @@
 				"index": 14
 			},
 			"home": {
-				"index": 13
+				"index": 12
 			},
 			"left shoulder": {
 				"index": 4
@@ -25527,7 +25813,7 @@
 	};
 
 /***/ },
-/* 233 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25536,29 +25822,29 @@
 	  value: true
 	});
 	
-	var _axisMapping = __webpack_require__(234);
+	var _axisMapping = __webpack_require__(236);
 	
 	var _axisMapping2 = _interopRequireDefault(_axisMapping);
 	
-	var _buttonMapping = __webpack_require__(235);
+	var _buttonMapping = __webpack_require__(237);
 	
 	var _buttonMapping2 = _interopRequireDefault(_buttonMapping);
 	
-	var _gamepadDiagram = __webpack_require__(236);
+	var _gamepadDiagram = __webpack_require__(238);
 	
 	var _gamepadDiagram2 = _interopRequireDefault(_gamepadDiagram);
 	
-	var _gamepadMapper = __webpack_require__(245);
+	var _gamepadMapper = __webpack_require__(247);
 	
 	var _gamepadMapper2 = _interopRequireDefault(_gamepadMapper);
 	
-	var _gamepadRawData = __webpack_require__(246);
+	var _gamepadRawData = __webpack_require__(248);
 	
 	var _gamepadRawData2 = _interopRequireDefault(_gamepadRawData);
 	
-	var _immutable = __webpack_require__(249);
+	var _immutable = __webpack_require__(251);
 	
-	var _pure = __webpack_require__(239);
+	var _pure = __webpack_require__(241);
 	
 	var _pure2 = _interopRequireDefault(_pure);
 	
@@ -25566,7 +25852,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _requestAnimationFrame = __webpack_require__(250);
+	var _requestAnimationFrame = __webpack_require__(252);
 	
 	var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
 	
@@ -25698,7 +25984,7 @@
 	}));
 
 /***/ },
-/* 234 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25727,7 +26013,7 @@
 	}
 
 /***/ },
-/* 235 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25756,7 +26042,7 @@
 	}
 
 /***/ },
-/* 236 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25766,19 +26052,19 @@
 	});
 	exports.default = GamepadDiagram;
 	
-	var _buttonNames = __webpack_require__(237);
+	var _buttonNames = __webpack_require__(239);
 	
 	var _buttonNames2 = _interopRequireDefault(_buttonNames);
 	
-	var _gamepadDiagramAxis = __webpack_require__(238);
+	var _gamepadDiagramAxis = __webpack_require__(240);
 	
 	var _gamepadDiagramAxis2 = _interopRequireDefault(_gamepadDiagramAxis);
 	
-	var _gamepadDiagramButton = __webpack_require__(243);
+	var _gamepadDiagramButton = __webpack_require__(245);
 	
 	var _gamepadDiagramButton2 = _interopRequireDefault(_gamepadDiagramButton);
 	
-	var _gamepadDiagramStick = __webpack_require__(244);
+	var _gamepadDiagramStick = __webpack_require__(246);
 	
 	var _gamepadDiagramStick2 = _interopRequireDefault(_gamepadDiagramStick);
 	
@@ -25810,7 +26096,7 @@
 	}
 
 /***/ },
-/* 237 */
+/* 239 */
 /***/ function(module, exports) {
 
 	module.exports = [
@@ -25842,7 +26128,7 @@
 	];
 
 /***/ },
-/* 238 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25851,7 +26137,7 @@
 	  value: true
 	});
 	
-	var _pure = __webpack_require__(239);
+	var _pure = __webpack_require__(241);
 	
 	var _pure2 = _interopRequireDefault(_pure);
 	
@@ -25881,7 +26167,7 @@
 	});
 
 /***/ },
-/* 239 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -25918,7 +26204,7 @@
 	  return klass;
 	};
 	
-	var _reactAddonsPureRenderMixin = __webpack_require__(240);
+	var _reactAddonsPureRenderMixin = __webpack_require__(242);
 	
 	var _reactAddonsPureRenderMixin2 = _interopRequireDefault(_reactAddonsPureRenderMixin);
 	
@@ -25935,13 +26221,13 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /***/ },
-/* 240 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(241);
+	module.exports = __webpack_require__(243);
 
 /***/ },
-/* 241 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -25956,7 +26242,7 @@
 	
 	'use strict';
 	
-	var shallowCompare = __webpack_require__(242);
+	var shallowCompare = __webpack_require__(244);
 	
 	/**
 	 * If your React component's render function is "pure", e.g. it will render the
@@ -25993,7 +26279,7 @@
 	module.exports = ReactComponentWithPureRenderMixin;
 
 /***/ },
-/* 242 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26022,7 +26308,7 @@
 	module.exports = shallowCompare;
 
 /***/ },
-/* 243 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26031,7 +26317,7 @@
 	  value: true
 	});
 	
-	var _pure = __webpack_require__(239);
+	var _pure = __webpack_require__(241);
 	
 	var _pure2 = _interopRequireDefault(_pure);
 	
@@ -26060,7 +26346,7 @@
 	});
 
 /***/ },
-/* 244 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26069,7 +26355,7 @@
 	  value: true
 	});
 	
-	var _pure = __webpack_require__(239);
+	var _pure = __webpack_require__(241);
 	
 	var _pure2 = _interopRequireDefault(_pure);
 	
@@ -26116,7 +26402,7 @@
 	});
 
 /***/ },
-/* 245 */
+/* 247 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -26271,7 +26557,7 @@
 	exports.default = GamedpadMapper;
 
 /***/ },
-/* 246 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26281,11 +26567,11 @@
 	});
 	exports.default = GamepadRawData;
 	
-	var _gamepadAxes = __webpack_require__(247);
+	var _gamepadAxes = __webpack_require__(249);
 	
 	var _gamepadAxes2 = _interopRequireDefault(_gamepadAxes);
 	
-	var _gamepadButtons = __webpack_require__(248);
+	var _gamepadButtons = __webpack_require__(250);
 	
 	var _gamepadButtons2 = _interopRequireDefault(_gamepadButtons);
 	
@@ -26307,7 +26593,7 @@
 	}
 
 /***/ },
-/* 247 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26343,7 +26629,7 @@
 	}
 
 /***/ },
-/* 248 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -26379,7 +26665,7 @@
 	}
 
 /***/ },
-/* 249 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31363,7 +31649,7 @@
 	}));
 
 /***/ },
-/* 250 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -31433,17 +31719,17 @@
 	}
 
 /***/ },
-/* 251 */
+/* 253 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 252 */,
-/* 253 */,
 /* 254 */,
 /* 255 */,
-/* 256 */
+/* 256 */,
+/* 257 */,
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "index.html";
